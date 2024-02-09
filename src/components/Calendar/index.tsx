@@ -24,7 +24,7 @@ const CalendarMain = () => {
 		onChange(nextMonth)
 	}
 
-	const handleCalendarChange = (value: unknown & Date) => {
+	const handleCalendarChange = (value: any) => {
 		onChange(value)
 		setSelectedDate(value)
 
