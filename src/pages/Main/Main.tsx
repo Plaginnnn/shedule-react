@@ -1,6 +1,6 @@
 import CalendarMain from '../../components/Calendar'
 
-export const Main = () => {
+export const Main: React.FC = () => {
 	return (
 		<div>
 			<h1>Группа</h1>
