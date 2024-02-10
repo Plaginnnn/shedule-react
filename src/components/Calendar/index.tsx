@@ -7,6 +7,11 @@ interface ScheduleDate {
 	date: string
 }
 
+interface ScheduleDate {
+	date: string
+	group: string // Добавлено новое свойство group
+}
+
 const CalendarMain: React.FC = () => {
 	const [value, onChange] = useState<Date>(new Date())
 	const [selectedDate, setSelectedDate] = useState<Date | null>(null)
@@ -34,14 +39,13 @@ const CalendarMain: React.FC = () => {
 			console.error('Unexpected value type in handleCalendarChange')
 		}
 	}
-
 	const formatDate = (date: Date): ScheduleDate => {
 		const year = date.getFullYear()
 		const month = (date.getMonth() + 1).toString().padStart(2, '0')
 		const day = date.getDate().toString().padStart(2, '0')
-		console.log({ date: `${year}-${month}-${day}` })
+		console.log({ date: `${year}-${month}-${day}`, group: 'ПЭ-2-21' })
 		// Пример того что мы получили {date: '2024-02-08'}
-		return { date: `${year}-${month}-${day}` }
+		return { date: `${year}-${month}-${day}`, group: 'ПЭ-2-21' } // Добавлено свойство group
 	}
 
 	return (
